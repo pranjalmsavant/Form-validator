@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+  <div class="container dashboard">
+    <img src="https://img.icons8.com/ios-filled/100/0984e3/user.png" alt="Profile Icon" style="margin-bottom:15px;">
+    <h2>Welcome!</h2>
+    <p id="welcomeMsg"></p>
+    <button class="btn" id="logoutBtn">Logout</button>
+  </div>
+
+  <script>
+    const welcomeMsg = document.getElementById('welcomeMsg');
+    const userEmail = localStorage.getItem('userEmail');
+
+    if (userEmail) {
+      welcomeMsg.textContent = `Logged in as: ${userEmail}`;
+    } else {
+      window.location.href = 'index.html';
+    }
+
+    const logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('userEmail');
+      localStorage.removeItem('userPassword');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

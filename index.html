@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validator App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="tabs">
+      <button id="signupTab" class="tab-btn active">Sign Up</button>
+      <button id="loginTab" class="tab-btn">Login</button>
+    </div>
+
+    <!-- Sign-Up Form -->
+    <form id="signupForm" novalidate>
+      <h2>Sign Up</h2>
+
+      <div class="form-control">
+        <label for="email">Email</label>
+        <div class="input-wrapper">
+          <span class="icon"></span>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <small class="error" aria-live="polite"></small>
+      </div>
+
+      <div class="form-control">
+        <label for="password">Password</label>
+        <div class="input-wrapper password-wrapper">
+          <span class="icon"></span>
+          <input type="password" id="password" placeholder="Enter password" required>
+          <button type="button" class="toggle-btn" id="togglePwd">Show</button>
+        </div>
+        <ul class="password-rules">
+          <li id="rule-length">Minimum 8 characters</li>
+          <li id="rule-upper">At least one uppercase letter</li>
+          <li id="rule-lower">At least one lowercase letter</li>
+          <li id="rule-digit">At least one digit</li>
+          <li id="rule-special">At least one special character</li>
+        </ul>
+        <small class="error" aria-live="polite"></small>
+      </div>
+
+      <div class="form-control">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="input-wrapper password-wrapper">
+          <span class="icon"></span>
+          <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+          <button type="button" class="toggle-btn" id="togglePwd2">Show</button>
+        </div>
+        <small class="error" aria-live="polite"></small>
+      </div>
+
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="loginForm" novalidate style="display:none;">
+      <h2>Login</h2>
+
+      <div class="form-control">
+        <label for="loginEmail">Email</label>
+        <div class="input-wrapper">
+          <span class="icon"></span>
+          <input type="email" id="loginEmail" placeholder="Enter your email" required>
+        </div>
+        <small class="error" aria-live="polite"></small>
+      </div>
+
+      <div class="form-control">
+        <label for="loginPassword">Password</label>
+        <div class="input-wrapper password-wrapper">
+          <span class="icon"></span>
+          <input type="password" id="loginPassword" placeholder="Enter password" required>
+          <button type="button" class="toggle-btn" id="toggleLoginPwd">Show</button>
+        </div>
+        <small class="error" aria-live="polite"></small>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
